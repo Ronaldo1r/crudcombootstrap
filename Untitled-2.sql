@@ -9,3 +9,5 @@ CREATE table `users`(
 `address` varchar(150) NOT NULL,
 `contact` varchar(20) NOT NULL
 );
+
+

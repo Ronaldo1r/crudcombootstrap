@@ -5,7 +5,6 @@ require_once 'header.php';
 
 echo "<div class='container'>";
 if( isset($_POST['delete'])){
-
         $sql = "DELETE  FROM users WHERE user_id=". $_POST['userid'];
         if ($con->query($sql) === TRUE){
 
@@ -32,8 +31,7 @@ if( $result->num_rows > 0) {
         while( $row = $result->fetch_assoc())
         {
             echo "<form action='' method='POST'>";  //added
-            echo "<input type='hidden' value='".$row['user_id']."'name='userid'/>";
-         // echo "<input type='hidden' value='".$row['user_id']."' name='userid'>";
+            echo "<input type='hidden' value=".$row['user_id']."name='userid'/>";
 //added
             echo "<tr>";
             echo "<td>".$row['firstname']. "</td>";

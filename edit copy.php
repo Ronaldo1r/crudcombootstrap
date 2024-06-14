@@ -8,13 +8,11 @@
 
     <div class="container">
     <?php
-                if(empty($_POST['update'])){
+                if(isset($_POST['update'])){
                     if(isset($_POST['firstname'])|| empty($_POST['lastname']) ||
                         empty($_POST['address']) || empty($_POST['contact']))
                     {
                     echo "Please fillout all required fields";
-                   
-                   
                     }
 
                     else{
@@ -22,8 +20,8 @@
                             $lastname = $_POST['lastname'];
                             $address = $_POST['address'];
                             $contact = $_POST['contact'];
-                   
-                      $sql = "UPDATE users set firstname='{$firstname}',lastname = ' {$lastname}', address = '{$address}',contact = '{$contact}' WHERE user_id =".$_POST['userid'];
+
+                    $sql = "UPDATE users set firstname='{$firstname}',lastname='{$lastname}',address = '{$address}',contact='{$contact}' where user_id=".$_post['userid'];
 
                         if ($con->query($sql) === TRUE) {
                             echo "<div class='alert alert-sucess'>Successfully updated user</div>";
@@ -55,21 +53,19 @@
                     
                             <form action="" method="POST">
 
-                            <input type="hidden" value="<?php echo $row['user_id'];?>" name="user_id">
-
-
+                            <input type="hidden" value="<?php echo $row['user_id'];?>" name="userid">
                             <label for="firstname">Firtname</label>
+
                             <input type="text" id="firstname" name="firstname" value="<?php echo $row['firstname'];?>" class="form-control"><br>
-
                             <label for="lastname">Lastname</label>
+
                             <input type="text" name="lastname" id="lastname" value="<?php echo $row['lastname'];?>" class="form-control"><br>
+                            <label for="address"><Address></label>
 
-                            <label for="address">Address</label>
                             <textarea rows="4" name="address" class="form-control"><?php echo $row['address'];?></textarea><br>
-
                             <label for="contact">Contact</label>
-                           
-                               <input type="text" name="contact" id="contact" value="<?php echo $row['contact'];?>" class="form-control"><br>
+
+                            <input type="text" name="contact" id="contact" value="?php echo $row['contact'];?>"class="form-control"><br>
                             <br>
                             <input type="submit" name="update" class="btn btn-success" value ="update">
         </form>

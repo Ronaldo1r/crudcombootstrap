@@ -1,4 +1,4 @@
-CREATE database samueldb
+CREATE database samueldb;
 
 use samueldb;
 
