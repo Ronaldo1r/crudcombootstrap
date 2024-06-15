@@ -1,4 +1,4 @@
-<?php
+<?php              //  <!-- VAI LINCARA AS PAGINAS -->  //
  
 require_once 'header.php';
 ?>

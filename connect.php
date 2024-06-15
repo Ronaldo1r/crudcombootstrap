@@ -1,5 +1,5 @@
 <?php
-        $localhost = "localhost";
+        $localhost = "localhost";   //<!-- CONEXÃO COM O BANDO DE DADOS -->//
         $username = "root";
         $password = "";
         $dbname = "samueldb";
